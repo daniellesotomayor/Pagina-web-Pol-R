@@ -4,7 +4,7 @@ import { WhatsAppLink } from "@/components/WhatsAppButton";
 
 export function Footer() {
   return (
-    <footer className="bg-navy-deep py-12 text-white">
+    <footer className="bg-black py-12 text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 md:grid-cols-3">
         <div>
           <img
@@ -53,9 +53,8 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-10 max-w-7xl border-t border-white/10 px-4 pt-6 text-xs text-white/50">
-        © {new Date().getFullYear()} pol-r Sistemas de Aislamiento Térmico. Todos los
-        derechos reservados.
+      <div className="mx-auto mt-10 max-w-7xl border-t border-white/15 px-4 pt-6 text-center text-sm text-white/80">
+        Copyright Pol-R 2026
       </div>
     </footer>
   );
