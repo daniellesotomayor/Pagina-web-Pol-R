@@ -1,0 +1,29 @@
+# Blueprint for Render. Keep the Lovable app at the repo root
+# (src/, public/, vite.config.ts) so images and styles stay in sync.
+services:
+  - type: web
+    name: pol-r-web
+    runtime: node
+    plan: starter
+    region: oregon
+    autoDeployTrigger: commit
+    buildCommand: bun run build
+    startCommand: node .output/server/index.mjs
+    healthCheckPath: /
+    buildFilter:
+      paths:
+        - src/**
+        - public/**
+        - packages/**
+        - package.json
+        - bun.lock
+        - bunfig.toml
+        - vite.config.ts
+        - render.yaml
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NITRO_PRESET
+        value: node-server
+      - key: NODE_ENV
+        value: production
